@@ -45,8 +45,10 @@ frameworks/base/services/core/jni/Android.mk
 
 编译：
 $ mmm frameworks/base/services (编译)
-$ make snod （生成system.img. /work/android-5.0.2/out/target/product/tiny4412/system out/target/product/tiny4412/system.img）
+$ make snod （生成system.img   out/target/product/tiny4412/system.img）
 $ ./gen-img.sh
-
+(报错：./gen-img.sh: line 31: mkimage: command not found
+解决办法：sudo apt-get install u-boot-tools)
 比较两个文件是否一样方法： diff file file
-out/target/product/tiny4412/system out/target/product/tiny4412/system.img
+root@book-virtual-machine:/work/android-5.0.2# diff system.img out/target/product/tiny4412/system.img 
+Binary files system.img and out/target/product/tiny4412/system.img differ
